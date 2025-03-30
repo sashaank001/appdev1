@@ -1,0 +1,223 @@
+/* Global Styles */
+body {
+    /* font-family: 'Ariel';
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0; */
+    font-family: 'Arial', sans-serif;
+    /* background-color:#1a1f33; */
+
+    background-image: url(https://preview.colorkit.co/color/1a1f33.png?static=true);
+       
+    /* background: url('https://source.unsplash.com/1600x900/?purple,abstract') no-repeat center center fixed; */
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+}
+
+.text-gradient {
+    background: linear-gradient(45deg, #1a237e, #42a5f5);
+    
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    font-weight: bold;
+}
+
+/* Container */
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    background-color: #CADCFC;  
+    /* background-image: url(https://www.freepik.com/free-photos-vectors/dark-violet-color-background); */
+    /* background: #301934; */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Header */
+h2, h4 {
+    color: #343a40;
+}
+
+/* Buttons */
+.btn {
+    border-radius: 50px;
+    padding: 8px 15px;
+    /* transition: all 0.3s ease-in-out; */
+}
+
+.btn-primary {
+    background-color: #007bff;
+    
+    border: none;
+}
+
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    
+}
+
+.create-btn {
+    width: 50px;  /* Set fixed width */
+    height: 50px; /* Set fixed height for a circular button */
+    border-radius: 50%; /* Make it round */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    transition: all 2s ease-in-out;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.create-btn:hover {
+    width: 180px;  /* Expand button width */
+    border-radius: 25px; /* Make it rounded */
+    font-size: 16px;
+    justify-content: center;
+    content:"Create New Subject";
+}
+.create-btn:hover::after {
+    content: "Create New Subject";
+    font-size: 16px;
+}
+
+.btn-info {
+    background-color: #17a2b8;
+    border: none;
+}
+
+.btn-info:hover {
+    background-color: #117a8b;
+}
+
+.btn-danger {
+    /* margin-left: 850px; */
+    background-color: #dc3545;
+    border: none;
+}
+
+.btn-danger:hover {
+    background-color: #a71d2a;
+}
+.back-btn{
+    margin-left: 400px;
+}
+
+.btn-lg{
+    margin-left: 200px;
+}
+
+
+/* Card Styles */
+.card {
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.card-header {
+    background-color: #343a40;
+    color: white;
+    padding: 10px;
+    font-size: 18px;
+}
+
+.card-body {
+    padding: 15px;
+}
+
+
+.subject-card {
+    transition: all 0.3s ease-in-out;
+    background-color: white; /* Default background */
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    height: 300px; /* Set a fixed height */
+    overflow: hidden; /* Hide overflow */
+    display: flex;
+    flex-direction: column;
+}
+
+.subject-card:hover {
+    transform: scale(1.05);
+    background-color: #dce6ff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Content inside the card should be scrollable */
+.subject-card ul {
+    flex-grow: 1; /* Take remaining space */
+    overflow-y: auto; /* Enable vertical scrolling */
+    max-height: 170px; /* Set a max height */
+    padding-right: 5px; /* Space for scrollbar */
+}
+
+/* Custom scrollbar */
+.subject-card ul::-webkit-scrollbar {
+    width: 5px; /* Thin scrollbar */
+}
+
+.subject-card ul::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+
+.subject-card ul::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+
+/* List Items */
+.list-group-item {
+    border: none;
+    border-bottom: 1px solid #ddd;
+}
+
+.list-group-item:last-child {
+    border-bottom: none;
+}
+
+/* Alerts */
+.alert {
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #6c757d;
+}
+
+
+
+.profile-container {
+    max-width: 600px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+.profile-card {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.profile-card p {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.profile-card .btn {
+    width: 100%;
+    margin-top: 10px;
+}

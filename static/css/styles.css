@@ -1,0 +1,26 @@
+/* Background image with purple shade */
+body {
+    background: url('https://source.unsplash.com/1600x900/?purple,abstract') no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* Box styling for the login form */
+.login-box {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    margin-top: 100px;
+}
+
+/* Styling for the title */
+.title-shadow {
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Center the login button */
+.login-btn {
+    width: 50%;
+    margin-top: 10px;
+}

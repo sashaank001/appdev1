@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+
+{% block title %}User Dashboard{% endblock %}
+
+
+{% block body %}
+
+
+
+
+
+
+
+
+
+
+<div class="container">
+    <h1 class="display-3 fw-bold text-gradient">
+        Quiz Master
+    </h1>
+    <!-- <h2 class="text-center">Quiz Master</h2> -->
+
+    <div class="mt-4 d-flex justify-content-between align-items-center">
+        <!-- Your Profile Button -->
+        <a href="{{ url_for('profile') }}" class="btn btn-secondary me-2">Your Profile</a>
+
+        
+        <!-- View Scores Button (Uses session['user_id']) -->
+        {% if session['user_id'] %}
+            <a href="{{ url_for('user_scores', user_id=session['user_id']) }}" class="btn btn-info"   >View Your Scores</a>
+        {% endif %}
+
+        
+        
+
+        <!-- Button to Redirect to Login Page -->
+        <a href="{{ url_for('index') }}"  class="btn btn-danger ms-auto"
+        onclick="return confirm('Are you sure you want to logout!!');" >Logout</a>
+        
+        
+    </div>
+</div>
+
+
+
+<div class="container mt-4">
+    <h2 class="mb-3 text-center">Welcome {{user.full_name}} !!</h2>  <!-- Display the full name -->
+    <div>
+        <h4>Your Subjects</h4>
+    </div>
+
+
+    <div class="row">
+        
+        {% if subjects %}
+        {% for subject in subjects %}
+            <div class="col-md-4">    
+            <div class="card subject-card p-3">
+                
+                    <h5 class="card-title">{{ subject.name }}</h5>
+                    <ul>
+                        <p class="text-muted mb-0">{{ subject.description }}</p>
+                    </ul>
+                    <a href="{{ url_for('view_chapters', subject_id=subject.id) }}" class="btn btn-primary btn-sm">
+                        View Chapters
+                    </a>
+                
+                <!-- <button id="mathQuizButton" class="btn btn-quiz">Attempt Quiz</button> -->
+            </div>
+            </div>
+            {% endfor %}
+
+            {% else %}
+            <p class="alert alert-warning">No subjects available.</p>
+        {% endif %}
+    </div>
+
+    <!-- View Scores Button (Uses session['user_id']) -->
+
+
+</div>
+
+
+
+
+
+{% endblock %}
+
+

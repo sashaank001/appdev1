@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block title %}Admin Dashboard{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h2 class="text-center">Admin Dashboard</h2>
+    <p class="text-center">Welcome, Admin!</p>
+
+    <!-- Flex container to align buttons -->
+    <div class="d-flex justify-content-between align-items-center flex-nowrap">
+        <!-- Button to manage users -->
+        <a href="{{ url_for('manage_users') }}" class="btn btn-warning mb-3">Manage Users</a>
+        <!-- a button to logout -->
+        <a href="{{ url_for('admin_logout') }}" class="btn btn-danger mb-3">Logout</a>
+    </div>
+</div>
+
+
+<div class="container">
+    
+    <div class="row">
+    
+        <div class="col-md-12">
+           
+            <!-- Button to create a new subject -->
+            <a href="{{ url_for('create_subject') }}" class="btn btn-primary mb-3">Create New Subject</a>
+
+            
+            
+
+            <!-- List of existing subjects -->
+            <h3>Existing Subjects</h3>
+            <!-- <ul class="list-group"> 
+                {% for subject in subjects %}
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        {{ subject.name }} - {{ subject.description }}
+                        <a href="{{ url_for('manage_subject', subject_id=subject.id) }}" class="btn btn-sm btn-info">Manage</a>
+                    </li>
+                {% endfor %}
+         </ul> -->
+         <div class="container">
+            <div class="row">
+                {% for subject in subjects %}
+                <div class="col-md-4 mb-4">  <!-- Ensures spacing and responsive layout -->
+                    <div class="card subject-card p-3 shadow-lg"> <!-- Added shadow for better visibility -->
+                        <h5 class="card-title">{{ subject.name }}</h5>
+                        <ul>
+                            <p class="text-muted mb-0">{{ subject.description }}</p>
+                        </ul>
+                        <a href="{{ url_for('manage_subject', subject_id=subject.id) }}" class="btn btn-info btn-sm">
+                            Manage
+                        </a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        
+
+
+            <div class="container mt-4 d-flex justify-content-center">
+                <!-- Button to create a new subject -->
+                <a href="{{ url_for('create_subject') }}" class="btn btn-primary mb-3 create-btn"> + </a>
+            </div>
+            
+
+        </div>
+    </div>
+</div>
+{% endblock %}
